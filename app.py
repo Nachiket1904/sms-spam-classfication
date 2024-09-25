@@ -9,6 +9,7 @@ ps = PorterStemmer()
 
 
 def transform_text(text):
+    nltk.download("punkt")
     text = text.lower()
     text = nltk.word_tokenize(text)
 
