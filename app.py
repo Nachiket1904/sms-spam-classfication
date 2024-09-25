@@ -1,3 +1,7 @@
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
+
 import streamlit as st
 import pickle
 import string
@@ -9,8 +13,6 @@ ps = PorterStemmer()
 
 
 def transform_text(text):
-    nltk.download('stopwords')
-    nltk.download("punkt_tab")
     text = text.lower()
     text = nltk.word_tokenize(text)
 
@@ -34,8 +36,8 @@ def transform_text(text):
 
     return " ".join(y)
 
-tfidf = pickle.load(open('models/vectorizer.pkl','rb'))
-model = pickle.load(open('models/model.pkl','rb'))
+tfidf = pickle.load(open('vectorizer1.pkl','rb'))
+model = pickle.load(open('model1.pkl','rb'))
 
 st.title("Email/SMS Spam Classifier")
 
